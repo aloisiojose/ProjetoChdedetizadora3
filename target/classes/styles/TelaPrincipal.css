@@ -1,0 +1,39 @@
+/* Created on : 15/04/2019, 02:05:18    Author     : Wagner */
+/* -------------------------> PLANO DE FUNDO <------------------------------- */
+.fundoTela {
+    -fx-background-image: url('../image/planoFundo5.jpg');
+    -fx-background-size: 100% 100%;
+}
+
+/*----------------> BLOCO QUE CUIDA DO SPLITPANE <---------------------------*/
+.lado1{
+    -fx-background-color: rgba(0,0,0,.3);
+}
+.titulo{
+    -fx-effect: dropshadow(two-pass-box , -fx-color, 0, 0 , 0, 0);
+    -fx-font-family: 'Times New Roman';
+    -fx-font-size: 24pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: rgb(255,255,255);
+}
+.split-pane{
+    -fx-padding: 0px;
+}
+.split-pane-divider{
+    /* -fx-background-color: rgba(54,31,2,.9); #b4721f */
+    -fx-background-color: linear-gradient(to bottom, #53565a, #ccc);
+    
+}
+.split-pane-divider > .vertical-grabber{
+    -fx-position-shape: false;
+}
+/* ----------------------> BASE, CABECALHO E RODAPE <------------------------ */
+#hb_top{
+    
+}
+#hb_bottom {
+    -fx-background-color: rgba(255,255,255,.1);
+}
+#hb_bottom > .image-view {
+    -fx-effect: dropshadow(two-pass-box ,rgba(0,0,0,.2), 2, 1, 2, 1);
+}
