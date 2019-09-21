@@ -1,15 +1,21 @@
 package com.projetos.projetochdedetizadora.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class TelaPrincipalController implements Initializable {
 
@@ -64,14 +70,17 @@ public class TelaPrincipalController implements Initializable {
 
     @FXML
     private void acessarFornecedores(ActionEvent event) {
+        abrirFormulario("Fornecedor_view");
     }
 
     @FXML
     private void acessarFuncionarios(ActionEvent event) {
+        abrirFormulario("Funcionarios_view");
     }
 
     @FXML
     private void acessarProdutos(ActionEvent event) {
+         abrirFormulario("Produto_view");
     }
 
     @FXML
@@ -97,4 +106,18 @@ public class TelaPrincipalController implements Initializable {
     @FXML
     private void acessarSistema(ActionEvent event) {
     }
+     public void abrirFormulario(String formulario) {
+         try {
+               Parent root = FXMLLoader.load(getClass().getResource("/fxml/"+formulario+".fxml"));
+     Stage stage = new Stage();
+     stage.setScene(new Scene(root));
+     stage.setTitle("Formulario");
+     stage.setResizable(false);
+     stage.initModality(Modality.APPLICATION_MODAL);
+     stage.show();
+             
+         } catch (IOException e) {
+         }
+   
+}
 }
