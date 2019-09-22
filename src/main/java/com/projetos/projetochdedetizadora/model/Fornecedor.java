@@ -2,19 +2,19 @@
 package com.projetos.projetochdedetizadora.model;
 
 public class Fornecedor {
-    private Long id;
-    private String descricao;
-    private String endereco;
-    private int num;
-    private String complemento;
-    private String cidade; //relaciomento
-    private int telefone1;
-    private int telefone2;
-    private String email;
-    private int cnpj;
-    private String inscricaoEstatual;
-    private char status;
-    private String observacao;
+    private Long id; //NÃO pode ser nulo
+    private String descricao; //NÃO pode ser nulo
+    private String endereco; //PODE ser nulo
+    private int num; //PODE ser nulo
+    private String complemento;  //PODE ser nulo
+    private String idCidade; //RELACIONAMENTO
+    private Long telefone1; //NÃO pode ser nulo
+    private Long telefone2; //PODE ser nulo
+    private String email; //PODE ser nulo
+    private Long cnpj; //NÃO pode ser nulo
+    private String inscricaoEstatual; //PODE ser nulo
+    private String status; //NÃO pode ser nulo
+    private String observacao; //PODE ser nulo
 
     public Long getId() {
         return id;
@@ -40,20 +40,28 @@ public class Fornecedor {
         this.endereco = endereco;
     }
 
-    public int getTelefone1() {
+    public Long getTelefone1() {
         return telefone1;
     }
 
-    public void setTelefone1(int telefone1) {
+    public void setTelefone1(Long telefone1) {
         this.telefone1 = telefone1;
     }
 
-    public int getTelefone2() {
+    public Long getTelefone2() {
         return telefone2;
     }
 
-    public void setTelefone2(int telefone2) {
+    public void setTelefone2(Long telefone2) {
         this.telefone2 = telefone2;
+    }
+
+    public Long getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(Long cnpj) {
+        this.cnpj = cnpj;
     }
 
     public String getEmail() {
@@ -64,19 +72,11 @@ public class Fornecedor {
         this.email = email;
     }
 
-    public int getCnpj() {
-        return cnpj;
-    }
-
-    public void setCnpj(int cnpj) {
-        this.cnpj = cnpj;
-    }
-
-    public char getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(char status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -88,12 +88,12 @@ public class Fornecedor {
         this.observacao = observacao;
     }
 
-    public String getCidade() {
-        return cidade;
+    public String getIdCidade() {
+        return idCidade;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setIdCidade(String idCidade) {
+        this.idCidade = idCidade;
     }
 
     public String getInscricaoEstatual() {

@@ -2,22 +2,22 @@
 package com.projetos.projetochdedetizadora.model;
 
 public class Cliente {
-    private Long id;
-    private String descricao;
-    private String endereco;
-    private int num;
-    private String complemento;
-    private String cidade; //relaciomento
-    private int cep;
-    private int telefone1;
-    private int telefone2;
-    private int telefone3;
-    private String email;
-    private String tipoPessoa;
-    private int cpf_cnpj;
-    private String inscricaoEstatual;
-    private char status;
-    private String observacao;
+    private Long id; //NÃO pode ser nulo
+    private String descricao; //NÃO pode ser nulo
+    private String endereco; //PODE ser nulo
+    private int num; //PODE ser nulo
+    private String complemento; //PODE ser nulo
+    private String idCidade; //RELACIONAMENTO
+    private Long cep; //NÃO pode ser nulo
+    private Long telefone1; //NÃO pode ser nulo
+    private Long telefone2; //PODE ser nulo
+    private Long telefone3;//PODE ser nulo
+    private String email; //PODE ser nulo
+    private String tipoPessoa; //NÃO pode ser nulo
+    private Long cpf_cnpj; //PODE ser nulo
+    private String inscricaoEstatual; //PODE ser nulo
+    private String status; //NÃO PODE ser nulo
+    private String observacao; //PODE ser nulo
 
     public Long getId() {
         return id;
@@ -43,44 +43,52 @@ public class Cliente {
         this.endereco = endereco;
     }
 
-    public String getCidade() {
-        return cidade;
+    public String getIdCidade() {
+        return idCidade;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setIdCidade(String idCidade) {
+        this.idCidade = idCidade;
     }
 
-    public int getCep() {
+    public Long getCep() {
         return cep;
     }
 
-    public void setCep(int cep) {
+    public void setCep(Long cep) {
         this.cep = cep;
     }
 
-    public int getTelefone1() {
+    public Long getTelefone1() {
         return telefone1;
     }
 
-    public void setTelefone1(int telefone1) {
+    public void setTelefone1(Long telefone1) {
         this.telefone1 = telefone1;
     }
 
-    public int getTelefone2() {
+    public Long getTelefone2() {
         return telefone2;
     }
 
-    public void setTelefone2(int telefone2) {
+    public void setTelefone2(Long telefone2) {
         this.telefone2 = telefone2;
     }
 
-    public int getTelefone3() {
+    public Long getTelefone3() {
         return telefone3;
     }
 
-    public void setTelefone3(int telefone3) {
+    public void setTelefone3(Long telefone3) {
         this.telefone3 = telefone3;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getEmail() {
@@ -99,11 +107,11 @@ public class Cliente {
         this.tipoPessoa = tipoPessoa;
     }
 
-    public int getCpf_cnpj() {
+    public Long getCpf_cnpj() {
         return cpf_cnpj;
     }
 
-    public void setCpf_cnpj(int cpf_cnpj) {
+    public void setCpf_cnpj(Long cpf_cnpj) {
         this.cpf_cnpj = cpf_cnpj;
     }
 
@@ -113,14 +121,6 @@ public class Cliente {
 
     public void setInscricaoEstatual(String inscricaoEstatual) {
         this.inscricaoEstatual = inscricaoEstatual;
-    }
-
-    public char getStatus() {
-        return status;
-    }
-
-    public void setStatus(char status) {
-        this.status = status;
     }
 
     public String getObservacao() {

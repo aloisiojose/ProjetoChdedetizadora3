@@ -3,6 +3,7 @@ package com.projetos.projetochdedetizadora.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class TelaPrincipalController implements Initializable {
 
@@ -60,12 +62,12 @@ public class TelaPrincipalController implements Initializable {
 
     @FXML
     private void acessarCidades(ActionEvent event) {
-        
-        
+        abrirFormulario("Cidade_view");
     }
 
     @FXML
     private void acessarClientes(ActionEvent event) {
+        abrirFormulario("Cliente_view");
     }
 
     @FXML
@@ -75,7 +77,7 @@ public class TelaPrincipalController implements Initializable {
 
     @FXML
     private void acessarFuncionarios(ActionEvent event) {
-        abrirFormulario("Funcionarios_view");
+        abrirFormulario("Funcionario_view");
     }
 
     @FXML
@@ -85,14 +87,18 @@ public class TelaPrincipalController implements Initializable {
 
     @FXML
     private void acessarUsuarios(ActionEvent event) {
+        abrirFormulario("Usuario_view");
     }
 
     @FXML
     private void acessarSair(ActionEvent event) {
+        Platform.exit();
+        System.exit(0);
     }
 
     @FXML
     private void acessarGerenciarOs(ActionEvent event) {
+        abrirFormulario("OrdemDeServico_view");
     }
 
     @FXML
@@ -112,12 +118,14 @@ public class TelaPrincipalController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/"+formulario+".fxml"));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
+            
             stage.setTitle("Formulario");
             stage.setResizable(false);
+            stage.initStyle(StageStyle.UTILITY); //Simplifica a tela do formúlario, deixando apenas o btn x no titulo
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.show();
-        } catch (IOException e) {
-             
+        } catch (IOException ex) {
+             System.out.println("Erro:" + ex);
         }
     }
 }

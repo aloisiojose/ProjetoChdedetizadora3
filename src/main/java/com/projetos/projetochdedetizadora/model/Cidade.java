@@ -2,10 +2,11 @@
 package com.projetos.projetochdedetizadora.model;
 
 public class Cidade {
-    private Long id;
-    private String descricao;
-    private String uf;
-    private int cep;
+    private Long id; //NÃO pode ser nulo
+    private String descricao; //NÃO pode ser nulo
+    private String uf; //NÃO pode ser nulo
+    private Long cep; //NÃO pode ser nulo
+    private String status; //NÃO pode ser nulo
 
     public Long getId() {
         return id;
@@ -31,11 +32,21 @@ public class Cidade {
         this.uf = uf;
     }
 
-    public int getCep() {
+    public Long getCep() {
         return cep;
     }
 
-    public void setCep(int cep) {
+    public void setCep(Long cep) {
         this.cep = cep;
     }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
+    
 }
