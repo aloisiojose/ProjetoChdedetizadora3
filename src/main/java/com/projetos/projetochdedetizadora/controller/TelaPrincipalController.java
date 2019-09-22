@@ -38,10 +38,10 @@ public class TelaPrincipalController implements Initializable {
     @FXML private MenuItem menuItemSistema;
     @FXML private HBox hb_bottom;
 
-    
-    
+        
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        //INSERINDO ÍCONES NOS MENUS.
         menuItemCidades.setGraphic(new ImageView("/icons/icon_cidade32.png"));
         menuItemClientes.setGraphic(new ImageView("/icons/icon_clientes32.png"));
         menuItemFornecedores.setGraphic(new ImageView("/icons/icon_forn32.png"));
@@ -106,18 +106,18 @@ public class TelaPrincipalController implements Initializable {
     @FXML
     private void acessarSistema(ActionEvent event) {
     }
-     public void abrirFormulario(String formulario) {
-         try {
-               Parent root = FXMLLoader.load(getClass().getResource("/fxml/"+formulario+".fxml"));
-     Stage stage = new Stage();
-     stage.setScene(new Scene(root));
-     stage.setTitle("Formulario");
-     stage.setResizable(false);
-     stage.initModality(Modality.APPLICATION_MODAL);
-     stage.show();
+    
+    public void abrirFormulario(String formulario) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/"+formulario+".fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Formulario");
+            stage.setResizable(false);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.show();
+        } catch (IOException e) {
              
-         } catch (IOException e) {
-         }
-   
-}
+        }
+    }
 }

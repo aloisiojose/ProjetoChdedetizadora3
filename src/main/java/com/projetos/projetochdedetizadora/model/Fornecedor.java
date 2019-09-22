@@ -5,6 +5,8 @@ public class Fornecedor {
     private Long id;
     private String descricao;
     private String endereco;
+    private int num;
+    private String complemento;
     private String cidade; //relaciomento
     private int telefone1;
     private int telefone2;
@@ -100,6 +102,22 @@ public class Fornecedor {
 
     public void setInscricaoEstatual(String inscricaoEstatual) {
         this.inscricaoEstatual = inscricaoEstatual;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
     }
     
     

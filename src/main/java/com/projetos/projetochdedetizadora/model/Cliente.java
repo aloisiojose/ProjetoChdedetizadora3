@@ -5,6 +5,8 @@ public class Cliente {
     private Long id;
     private String descricao;
     private String endereco;
+    private int num;
+    private String complemento;
     private String cidade; //relaciomento
     private int cep;
     private int telefone1;
@@ -127,6 +129,22 @@ public class Cliente {
 
     public void setObservacao(String observacao) {
         this.observacao = observacao;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
     }
     
     
