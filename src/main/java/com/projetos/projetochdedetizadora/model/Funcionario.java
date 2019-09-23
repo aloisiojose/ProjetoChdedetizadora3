@@ -1,43 +1,14 @@
 
 package com.projetos.projetochdedetizadora.model;
 
-import java.io.Serializable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="funcionario")
-
-public class Funcionario implements Serializable {
-    @Id //chave primaria
-    @GeneratedValue(strategy =GenerationType.IDENTITY)//auto icremente
-    @Column(name="id", nullable = false)//coluna no banco de dados
+public class Funcionario {
     private Long id; //NÃO pode ser nulo
-     
-    @Column(name="descricao",length = 100, nullable = false) 
     private String descricao; //NÃO pode ser nulo
-    
-    @Column(name="endereço",length = 100, nullable = false)
     private String endereco; //NÃO pode ser nulo
-    
-    @Column(name="numero",length = 15, nullable = false)
     private int num; //NÃO pode ser nulo
-    
-    @OneToOne
     private String idCidade; //RELACIONAMENTO
-    
-    @Column(name="telefone",length = 15, nullable = false)
     private Long telefone1; //NÃO pode ser nulo
-    
-    @Column(name="função",length = 30, nullable = false)
     private String funcao; //NÃO pode ser nulo
-    
-    @Column(name="status",length = 100, nullable = false)
     private String status; //NÃO pode ser nulo
 
     public String getEndereco() {
