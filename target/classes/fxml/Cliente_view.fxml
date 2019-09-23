@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="649.0" prefWidth="942.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projetos.projetochdedetizadora.controller.ClienteController">
+<AnchorPane id="AnchorPane" prefHeight="656.0" prefWidth="962.0" styleClass="fundoPrincipal" stylesheets="@../styles/formulariopadrao.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projetos.projetochdedetizadora.controller.ClienteController">
      <children>
       <HBox fx:id="hbTopo" alignment="CENTER_LEFT" layoutX="15.0" layoutY="11.0" prefHeight="54.0" prefWidth="728.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -89,8 +89,8 @@
             </Button>
          </children>
       </HBox>
-      <TableView fx:id="tableView" layoutX="14.0" layoutY="120.0" prefHeight="430.0" prefWidth="435.0" />
-      <GridPane layoutX="457.0" layoutY="62.0" prefHeight="486.0" prefWidth="471.0" vgap="10.0">
+      <TableView fx:id="tableView" layoutX="14.0" layoutY="120.0" prefHeight="448.0" prefWidth="435.0" />
+      <GridPane layoutX="470.0" layoutY="82.0" prefHeight="486.0" prefWidth="471.0" vgap="10.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="124.0" minWidth="10.0" prefWidth="124.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="10.0" prefWidth="77.0" />
@@ -153,10 +153,13 @@
                   <Insets bottom="-12.0" />
                </GridPane.margin>
             </JFXTextField>
-            <JFXTextField fx:id="tfObservacao" labelFloat="true" prefHeight="43.0" prefWidth="412.0" promptText="OBSERVAÇÕES" GridPane.columnSpan="4" GridPane.rowIndex="8" GridPane.valignment="BOTTOM">
+            <JFXTextField fx:id="tfObservacao" labelFloat="true" prefHeight="24.0" prefWidth="451.0" promptText="OBSERVAÇÕES" GridPane.columnSpan="4" GridPane.rowIndex="8" GridPane.valignment="BOTTOM">
                <font>
                   <Font size="14.0" />
                </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin>
             </JFXTextField>
             <JFXTextField fx:id="tfTelefone2" labelFloat="true" prefHeight="30.0" prefWidth="172.0" promptText="TELEFONE 2*" GridPane.columnSpan="2" GridPane.rowIndex="5">
                <font>
@@ -193,6 +196,11 @@
                   <Font size="14.0" />
                </font>
             </JFXTextField>
+            <CheckBox fx:id="chAtivo" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="ATIVO" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="35.0" left="40.0" />
+               </GridPane.margin>
+            </CheckBox>
          </children>
          <padding>
             <Insets left="10.0" right="10.0" top="5.0" />
@@ -202,12 +210,11 @@
             <String fx:value="textFild" />
          </styleClass>
       </GridPane>
-      <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="27.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="25.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../icons/icon_pesquisar32.png" />
+            <Image url="@../icons/icon_pesquisar32v2.png" />
          </image>
       </ImageView>
-      <JFXTextField fx:id="tfPesquisar" labelFloat="true" layoutX="62.0" layoutY="85.0" prefHeight="25.0" prefWidth="379.0" promptText="PESQUISAR" />
-      <CheckBox fx:id="chAtivo" layoutX="856.0" layoutY="49.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="ATIVO" />
+      <JFXTextField fx:id="tfPesquisar" labelFloat="true" layoutX="62.0" layoutY="85.0" prefHeight="31.0" prefWidth="387.0" promptText="PESQUISAR" />
    </children>
 </AnchorPane>

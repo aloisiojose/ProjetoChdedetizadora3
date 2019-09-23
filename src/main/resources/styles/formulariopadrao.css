@@ -1,7 +1,171 @@
-/*
- * Empty Stylesheet file.
- */
 
-.mainFxmlClass {
+/* -------------------------> PLANO DE FUNDO <------------------------------- */
+.fundoPrincipal{
+    -fx-background-image: url('../image/planoFundo7.jpg');
+    -fx-background-size: 100% 100%;
+}
 
+/* ----------------------> BASE, CABECALHO E RODAPE <------------------------ */
+#hbTopo{
+    -fx-background-color: linear-gradient(to bottom, #EEE , #E9E4F0 90%);
+    -fx-effect: dropshadow(two-pass-box ,rgba(90,79,29,.5), 1, 1, 1, 1);
+    -fx-background-radius:  0 0 10px 10px;
+}
+#hbTopo > #lblTitulo{
+    -fx-effect: dropshadow(two-pass-box ,rgba(255,255,255,.5), 2, 1, 1, 1);
+    -fx-text-fill: #314E89;
+    -fx-text-alignment: left;
+}
+
+#hbBase{
+    -fx-background-color: linear-gradient(to top, #D3CCE3, #E9E4F0 90%);
+    -fx-effect: dropshadow(two-pass-box ,rgba(90,79,29,.5), 2, 1, 2, 1);
+    -fx-background-radius: 25px 25px 0 0;
+}
+
+/* ---------------------------> ESTILO GRID PANE <--------------------------- */
+.gridPane{
+    -fx-background-color: linear-gradient(to bottom, #fff, #bdc3c7); 
+    -fx-effect: dropshadow(two-pass-box ,rgba(90,79,29,.3), 3, 1, 1, 1);
+    -fx-background-radius: 10px;
+}
+
+.gridPane > .jfx-text-field{
+    -fx-highlight-text-fill: rgba(90,81,40,.9);
+    -fx-prompt-text-fill: #5A5128;
+    -jfx-focus-color: #7C680A;
+    -jfx-unfocus-color: #B09D47;
+    -fx-font-size: 11pt;
+    -fx-text-fill: rgba(0,0,0,1);
+    -fx-fill: rgb(176,157,71);
+}
+
+.gridPane > .jfx-combo-box{
+    -fx-highlight-text-fill: rgba(90,81,40,.9);
+    -fx-prompt-text-fill: #5A5128;
+    -jfx-focus-color: #7C680A;
+    -jfx-unfocus-color: #B09D47;
+    -fx-font-size: 11pt;
+    -fx-text-fill: rgba(0,0,0,1);
+    -fx-fill: rgb(176,157,71);
+}
+
+.cbCidade{
+    -fx-prompt-text-fill: #5A5128;
+    -fx-text-fill: rgba(90,79,29,1);
+}
+
+.gridPane > .jfx-combo-box > .combo-box-button-container > .prompt-text{
+    -fx-fill:rgba (90,79,29,.2);
+}
+
+.gridPane > .jfx-date-picker:editable > .date-picker-display-node{
+    -fx-highlight-text-fill: rgba(90,81,40,.9);
+    -fx-prompt-text-fill: #5A5128;
+    -jfx-focus-color: #7C680A;
+    -jfx-unfocus-color: #B09D47;
+    -fx-font-size: 11pt;
+    -fx-text-fill: rgba(0,0,0,1);
+    -fx-fill: rgb(176,157,71); 
+}
+
+.gridPane > .check-box:determinate > .text {
+    -fx-font-size: 10pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: rgba(0,0,0,1); 
+}
+
+.gridPane > .label {
+    -fx-font-size: 10pt;
+    -fx-text-fill: rgba(90,79,29,1);
+    -fx-fill: rgb(176,157,71);
+}
+
+/* ----------------------> ESTILO TEXTFIELD PESQUISA <----------------------- */
+#tfPesquisar{
+    -fx-background-color: #fdfcfb;
+    -fx-highlight-text-fill: rgba(90,81,40,.9);
+    -fx-prompt-text-fill: #5A5128;
+    -jfx-focus-color: #7C680A;
+    -jfx-unfocus-color: #B09D47;
+    -fx-text-fill: rgba(0,0,0,1);
+    -fx-fill: rgb(176,157,71);
+    -fx-font-size: 11pt;
+}
+
+/* -------------------------> ESTILO TABLEVIEW <----------------------------- */
+.table-view{
+    -fx-background-color: #E9E4F0;
+    -fx-effect: dropshadow(two-pass-box ,rgba(90,79,29,.3), 3, 1, 1, 1);
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-text-alignment: center;
+    -fx-font-family: "Courier New";
+}
+
+.table-view >.column-header-background > .nested-column-header > .table-column{
+    -fx-background-color: linear-gradient(to bottom, #eef2f3, #8e9eab);
+    -fx-border-color: linear-gradient(to bottom, #ccc, #E6DADA);
+}
+
+.table-view >.column-header-background > .filler{
+    -fx-background-color: linear-gradient(to bottom, #eef2f3, #8e9eab);
+    -fx-border-color: linear-gradient(to bottom, #ccc, #E6DADA);
+}
+
+/* ---------------------> ESTILO TABLEVIEW DO GRIS <------------------------- */
+.gridPane > .table-view{
+    -fx-background-color: #E9E4F0;
+    -fx-effect: dropshadow(two-pass-box ,rgba(90,79,29,.3), 3, 1, 1, 1);
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-text-alignment: center;
+    -fx-font-family: "Courier New";
+}
+
+.gridPane > .table-view >.column-header-background > .nested-column-header > .table-column{
+    -fx-background-color: linear-gradient(to bottom, #eef2f3, #8e9eab);
+    -fx-border-color: linear-gradient(to bottom, #ccc, #E6DADA);
+}
+
+.gridPane > .table-view >.column-header-background > .filler{
+    -fx-background-color: linear-gradient(to bottom, #eef2f3, #8e9eab);
+    -fx-border-color: linear-gradient(to bottom, #ccc, #E6DADA);
+}
+
+/* -------------------------> ESTILO BUTTON <-------------------------------- */
+#hbBase > .button{
+    -fx-background-color: linear-gradient(to top, #757F9A, #D7DDE8 80%);
+    -fx-effect: dropshadow(two-pass-box ,rgba(0,0,0,.6), 2, 2, 1, 1);
+    -fx-font-weight: bold;
+    -fx-font-size: 10pt;
+}
+#hbBase > .button:pressed{
+    -fx-background-color: rgb(255,129,24);
+    -fx-text-fill: #fff;
+}
+
+#hbBase > .button:hover{
+    -fx-background-color: linear-gradient(to bottom, #bdc3c7 50%, #D7DDE8);
+    -fx-effect: dropshadow(two-pass-box ,rgba(0,255,0,.7), 2, 2, 1, 1);
+    -fx-cursor:hand;
+}
+
+.button > .image-view{
+    -fx-effect: dropshadow(two-pass-box ,rgba(0,0,0,.8), 1, 1, 1, 1);
+}
+
+.button:hover > .image-view{
+    -fx-effect: dropshadow(two-pass-box ,rgba(0,255,0,.8), 1, 1, 1, 1);
+}
+
+/* -------------------------> ESTILO JFXBUTTON <-------------------------------- */
+.gridPane > .jfx-password-field{
+    -fx-highlight-text-fill: rgba(90,81,40,.9);
+    -fx-prompt-text-fill: #5A5128;
+    -jfx-focus-color: #7C680A;
+    -jfx-unfocus-color: #B09D47;
+    -fx-font-size: 11pt;
+    -fx-text-fill: rgba(0,0,0,1);
+    -fx-fill: rgb(176,157,71);
 }

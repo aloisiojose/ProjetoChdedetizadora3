@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
@@ -20,6 +21,8 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class TelaPrincipalController implements Initializable {
+    
+    public static String titulo, icone; //variaveis usadas para enviar valores para os forms
 
     @FXML private HBox hb_top;
     @FXML private MenuBar barraDeMenu;
@@ -62,32 +65,44 @@ public class TelaPrincipalController implements Initializable {
 
     @FXML
     private void acessarCidades(ActionEvent event) {
-        abrirFormulario("Cidade_view");
+        titulo = menuItemCidades.getText();
+        icone = "/icons/icon_cidade32.png";
+        abrirFormulario("Cidade_view", titulo, icone);
     }
 
     @FXML
     private void acessarClientes(ActionEvent event) {
-        abrirFormulario("Cliente_view");
+        titulo = menuItemClientes.getText();
+        icone = "/icons/icon_clientes32v2.png";
+        abrirFormulario("Cliente_view", titulo, icone);
     }
 
     @FXML
     private void acessarFornecedores(ActionEvent event) {
-        abrirFormulario("Fornecedor_view");
+        titulo = menuItemFornecedores.getText();
+        icone = "/icons/icon_forn32v2.png";
+        abrirFormulario("Fornecedor_view", titulo, icone);
     }
 
     @FXML
     private void acessarFuncionarios(ActionEvent event) {
-        abrirFormulario("Funcionario_view");
+        titulo = menuItemFuncionarios.getText();
+        icone = "/icons/icon_func32v2.png";
+        abrirFormulario("Funcionario_view", titulo, icone);
     }
 
     @FXML
     private void acessarProdutos(ActionEvent event) {
-         abrirFormulario("Produto_view");
+        titulo = menuItemProdutos.getText();
+        icone = "/icons/icon_produto32v2.png";
+        abrirFormulario("Produto_view", titulo, icone);
     }
 
     @FXML
     private void acessarUsuarios(ActionEvent event) {
-        abrirFormulario("Usuario_view");
+        titulo = menuItemUsuarios.getText();
+        icone = "/icons/icon_user48v2.png";
+        abrirFormulario("Usuario_view", titulo, icone);
     }
 
     @FXML
@@ -98,7 +113,9 @@ public class TelaPrincipalController implements Initializable {
 
     @FXML
     private void acessarGerenciarOs(ActionEvent event) {
-        abrirFormulario("OrdemDeServico_view");
+        titulo = menuItemGerenciarOs.getText();
+        icone = "/icons/icon_ordemServico32v2.png";
+        abrirFormulario("OrdemDeServico_view", titulo, icone);
     }
 
     @FXML
@@ -113,13 +130,16 @@ public class TelaPrincipalController implements Initializable {
     private void acessarSistema(ActionEvent event) {
     }
     
-    public void abrirFormulario(String formulario) {
+    public void abrirFormulario(String formulario, String titulo, String icone) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/"+formulario+".fxml"));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             
-            stage.setTitle("Formulario");
+            Image logoForm = new Image(getClass().getResourceAsStream(icone));
+            stage.getIcons().add(logoForm);
+            
+            stage.setTitle(titulo);
             stage.setResizable(false);
             stage.initStyle(StageStyle.UTILITY); //Simplifica a tela do formúlario, deixando apenas o btn x no titulo
             stage.initModality(Modality.APPLICATION_MODAL);

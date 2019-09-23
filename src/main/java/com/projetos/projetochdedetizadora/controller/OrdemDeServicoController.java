@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
+import static com.projetos.projetochdedetizadora.controller.TelaPrincipalController.icone;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -15,8 +16,11 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import static jdk.nashorn.internal.objects.NativeString.toUpperCase;
 
 
 public class OrdemDeServicoController implements Initializable {
@@ -57,7 +61,10 @@ public class OrdemDeServicoController implements Initializable {
   
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-      
+        //-----> Configuração da barra de título do form
+        lblTitulo.setText(toUpperCase("gerenciar ordem de Serviço"));
+        Image img = new Image(icone);
+        imgViewTitulo.setImage(img);      
     }    
 
     @FXML
@@ -70,6 +77,6 @@ public class OrdemDeServicoController implements Initializable {
 
     @FXML
     private void excluirRegistro(ActionEvent event) {
-    }
+    }  
     
 }
