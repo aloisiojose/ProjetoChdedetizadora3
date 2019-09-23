@@ -1,22 +1,67 @@
 
 package com.projetos.projetochdedetizadora.model;
 
-public class Cliente {
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="cliente")
+
+public class Cliente implements Serializable {
+    @Id
+    @GeneratedValue(strategy =GenerationType.IDENTITY)//auto icremente
+    @Column(name="id", nullable = false)//coluna no banco de dados
     private Long id; //NÃO pode ser nulo
+    
+    @Column(name="descricao",length = 100, nullable = false)
     private String descricao; //NÃO pode ser nulo
+    
+    @Column(name="endereço",length = 100, nullable = true)
     private String endereco; //PODE ser nulo
+    
+    @Column(name="numero",length =15, nullable = false)
     private int num; //PODE ser nulo
+    
+    @Column(name="complemento",length = 100, nullable = false)
     private String complemento; //PODE ser nulo
+    
+    @OneToOne
     private String idCidade; //RELACIONAMENTO
+    
+    @Column(name="cep",length = 8, nullable = false)
     private Long cep; //NÃO pode ser nulo
+    
+    @Column(name="telefone 1",length = 15, nullable = false)
     private Long telefone1; //NÃO pode ser nulo
+    
+    @Column(name="telefone 2",length =15, nullable = true) 
     private Long telefone2; //PODE ser nulo
+   
+    @Column(name="telefone 3",length =15, nullable = true)
     private Long telefone3;//PODE ser nulo
+   
+    @Column(name="email",length =100, nullable = true)
     private String email; //PODE ser nulo
+   
+    @Column(name="tipo de pessoa",length =100, nullable = false)
     private String tipoPessoa; //NÃO pode ser nulo
+   
+    @Column(name="cpf,cnpj",length =15, nullable = true)
     private Long cpf_cnpj; //PODE ser nulo
+   
+    @Column(name="inscrição estadual",length =15, nullable = true)
     private String inscricaoEstatual; //PODE ser nulo
+   
+    @Column(name="status",length =100, nullable = false)
     private String status; //NÃO PODE ser nulo
+   
+    @Column(name="obserrvação",length =100, nullable = true)
     private String observacao; //PODE ser nulo
 
     public Long getId() {
