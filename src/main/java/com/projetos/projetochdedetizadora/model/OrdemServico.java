@@ -4,21 +4,21 @@ package com.projetos.projetochdedetizadora.model;
 import java.time.LocalDate;
 
 public class OrdemServico {
-    private Long id;
-    private String cliente;  //relaciomento
-    private String cidade; //relaciomento
-    private String funcionario;  //relaciomento
-    private LocalDate dataPedido;
-    private LocalDate dataServico;
-    private String local;
-    private String complemento;
-    private float area;
-    private String situacao;
-    private String praga;
-    private String produto;  //relaciomento
-    private String modalidade;
-    private int tempoGarantia;
-    private double valor;
+    private Long id; //NÃO pode ser nulo
+    private String idCliente;  //RELACIONAMENTO
+    private String idCidade; //RELACIONAMENTO
+    private String idFuncionario;  //RELACIONAMENTO
+    private LocalDate dataPedido; //NÃO pode ser nulo
+    private LocalDate dataServico; //PODE ser nulo
+    private String local; //NÃO pode ser nulo
+    private String complemento; //PODE ser nulo
+    private float area; //PODE ser nulo
+    private String situacaoVisita; //NÃO pode ser nulo
+    private String praga; //PODE ser nulo
+    private String idProduto;  //RELACIONAMENTO
+    private String modalidadeOrdemServico; //NÃO pode ser nulo
+    private int tempoGarantia; //PODE ser nulo
+    private double valor; //PODE ser nulo
 
     public Long getId() {
         return id;
@@ -28,20 +28,20 @@ public class OrdemServico {
         this.id = id;
     }
 
-    public String getCliente() {
-        return cliente;
+    public String getIdCliente() {
+        return idCliente;
     }
 
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
+    public void setIdCliente(String idCliente) {
+        this.idCliente = idCliente;
     }
 
-    public String getFuncionario() {
-        return funcionario;
+    public String getIdFuncionario() {
+        return idFuncionario;
     }
 
-    public void setFuncionario(String funcionario) {
-        this.funcionario = funcionario;
+    public void setIdFuncionario(String idFuncionario) {
+        this.idFuncionario = idFuncionario;
     }
 
     public LocalDate getDataPedido() {
@@ -84,12 +84,12 @@ public class OrdemServico {
         this.area = area;
     }
 
-    public String getSituacao() {
-        return situacao;
+    public String getSituacaoVisita() {
+        return situacaoVisita;
     }
 
-    public void setSituacao(String situacao) {
-        this.situacao = situacao;
+    public void setSituacaoVisita(String situacaoVisita) {
+        this.situacaoVisita = situacaoVisita;
     }
 
     public String getPraga() {
@@ -100,20 +100,20 @@ public class OrdemServico {
         this.praga = praga;
     }
 
-    public String getProduto() {
-        return produto;
+    public String getIdProduto() {
+        return idProduto;
     }
 
-    public void setProduto(String produto) {
-        this.produto = produto;
+    public void setIdProduto(String idProduto) {
+        this.idProduto = idProduto;
     }
 
-    public String getModalidade() {
-        return modalidade;
+    public String getModalidadeOrdemServico() {
+        return modalidadeOrdemServico;
     }
 
-    public void setModalidade(String modalidade) {
-        this.modalidade = modalidade;
+    public void setModalidadeOrdemServico(String modalidadeOrdemServico) {
+        this.modalidadeOrdemServico = modalidadeOrdemServico;
     }
 
     public int getTempoGarantia() {
@@ -132,12 +132,12 @@ public class OrdemServico {
         this.valor = valor;
     }
 
-    public String getCidade() {
-        return cidade;
+    public String getIdCidade() {
+        return idCidade;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setIdCidade(String idCidade) {
+        this.idCidade = idCidade;
     }
     
     

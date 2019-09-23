@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
@@ -17,9 +18,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="556.0" prefWidth="944.0" styleClass="fundoPrincipal" stylesheets="@../styles/formulariopadrao.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projetos.projetochdedetizadora.controller.ProdutoController">
-    <children>
-      <HBox fx:id="hbTopo" alignment="CENTER_LEFT" layoutX="15.0" layoutY="11.0" prefHeight="54.0" prefWidth="944.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<AnchorPane id="AnchorPane" prefHeight="513.0" prefWidth="743.0" styleClass="fundoPrincipal" stylesheets="@../styles/formulariopadrao.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projetos.projetochdedetizadora.controller.UsuarioController">
+<children>
+      <HBox fx:id="hbTopo" alignment="CENTER_LEFT" layoutX="15.0" layoutY="11.0" prefHeight="54.0" prefWidth="728.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fx:id="imgViewTitulo" fitHeight="34.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
@@ -39,7 +40,7 @@
             </Label>
          </children>
       </HBox>
-      <HBox fx:id="hbBase" alignment="CENTER" layoutX="19.0" layoutY="542.0" prefHeight="68.0" prefWidth="728.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <HBox fx:id="hbBase" alignment="CENTER" layoutX="19.0" layoutY="542.0" prefHeight="67.0" prefWidth="743.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Button fx:id="btnNovo" mnemonicParsing="false" onAction="#novoRegistro" prefHeight="47.0" prefWidth="105.0" text="NOVO">
                <HBox.margin>
@@ -58,7 +59,7 @@
             </Button>
             <Button fx:id="btnSalvar" layoutX="379.0" layoutY="17.0" mnemonicParsing="false" onAction="#salvarRegistro" prefHeight="47.0" prefWidth="105.0" text="SALVAR">
                <graphic>
-                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="24.0" fitWidth="24.0" onDragDetected="#salvarRegistro" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../icons/icon_salvar32.png" />
                      </image>
@@ -88,22 +89,19 @@
             </Button>
          </children>
       </HBox>
-      <TableView fx:id="tableView" layoutX="22.0" layoutY="118.0" prefHeight="341.0" prefWidth="450.0" />
-      <GridPane layoutX="491.0" layoutY="83.0" prefHeight="372.0" prefWidth="432.0" vgap="10.0">
+      <TableView fx:id="tableView" layoutX="14.0" layoutY="125.0" prefHeight="287.0" prefWidth="288.0" />
+      <GridPane layoutX="318.0" layoutY="88.0" prefHeight="322.0" prefWidth="411.0" vgap="10.0">
          <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="124.0" minWidth="10.0" prefWidth="66.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="124.0" minWidth="10.0" prefWidth="78.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="129.0" minWidth="10.0" prefWidth="75.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="124.0" minWidth="10.0" prefWidth="124.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="10.0" prefWidth="77.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
          </columnConstraints>
          <rowConstraints>
             <RowConstraints />
             <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="54.0" valignment="BOTTOM" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="159.0" minHeight="10.0" prefHeight="62.0" valignment="BOTTOM" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="275.0" minHeight="10.0" prefHeight="63.0" valignment="BOTTOM" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="277.0" minHeight="10.0" prefHeight="74.0" valignment="BOTTOM" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="236.0" minHeight="10.0" prefHeight="94.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="159.0" minHeight="10.0" prefHeight="52.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="275.0" minHeight="10.0" prefHeight="52.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="277.0" minHeight="10.0" prefHeight="54.0" valignment="BOTTOM" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
             <JFXTextField fx:id="tfId" editable="false" labelFloat="true" promptText="ID" GridPane.rowIndex="1">
@@ -111,54 +109,19 @@
                   <Font size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="tfDescricao" labelFloat="true" prefHeight="30.0" prefWidth="315.0" promptText="DESCRIÇÃO*" styleClass="jfx-text-field" GridPane.columnSpan="5" GridPane.rowIndex="2">
-               <GridPane.margin>
-                  <Insets />
-               </GridPane.margin>
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </JFXTextField>
-            <JFXTextField fx:id="tfQuantidade" labelFloat="true" prefHeight="30.0" prefWidth="112.0" promptText="QUANTIDADE" GridPane.columnSpan="2" GridPane.rowIndex="3">
-               <GridPane.margin>
-                  <Insets />
-               </GridPane.margin>
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </JFXTextField>
-            <JFXTextField fx:id="tfUnidade" labelFloat="true" promptText="UNIDADE" GridPane.columnIndex="2" GridPane.rowIndex="3">
-               <font>
-                  <Font size="14.0" />
-               </font>
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-            </JFXTextField>
-            <JFXTextField fx:id="tfValorCusto" labelFloat="true" promptText="VALOR_CUSTO" GridPane.columnSpan="2" GridPane.rowIndex="4">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </JFXTextField>
-            <JFXTextField fx:id="tfFornecedor" labelFloat="true" promptText="FORNECEDOR" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="3">
-               <font>
-                  <Font size="14.0" />
-               </font>
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-            </JFXTextField>
-            <JFXTextField fx:id="tfObservacao" labelFloat="true" prefHeight="38.0" prefWidth="412.0" promptText="OBSERVAÇÕES" GridPane.columnSpan="5" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
-               <font>
-                  <Font size="14.0" />
-               </font>
+            <JFXPasswordField fx:id="pwSenha" labelFloat="true" promptText="SENHA" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+            <JFXPasswordField fx:id="pwConfirmarSenha" labelFloat="true" promptText="CONFIRMAR SENHA" GridPane.columnSpan="3" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets bottom="10.0" />
-               </GridPane.margin>
+               </GridPane.margin></JFXPasswordField>
+            <JFXTextField fx:id="tfLogin" labelFloat="true" promptText="LOGIN" GridPane.columnSpan="3" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
             </JFXTextField>
-            <CheckBox fx:id="chAtivo" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="ATIVO" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <CheckBox fx:id="chAtivo" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="ATIVO" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <GridPane.margin>
-                  <Insets left="25.0" />
+                  <Insets bottom="20.0" left="100.0" />
                </GridPane.margin>
             </CheckBox>
          </children>
@@ -170,11 +133,11 @@
             <String fx:value="textFild" />
          </styleClass>
       </GridPane>
-      <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="24.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="17.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icons/icon_pesquisar32v2.png" />
          </image>
       </ImageView>
-      <JFXTextField fx:id="tfPesquisar" labelFloat="true" layoutX="62.0" layoutY="83.0" prefHeight="31.0" prefWidth="412.0" promptText="PESQUISAR" />
+      <JFXTextField fx:id="tfPesquisar" labelFloat="true" layoutX="55.0" layoutY="89.0" prefHeight="31.0" prefWidth="249.0" promptText="PESQUISAR" />
    </children>
 </AnchorPane>

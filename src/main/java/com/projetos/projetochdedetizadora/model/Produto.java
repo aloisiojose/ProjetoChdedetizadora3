@@ -2,13 +2,14 @@
 package com.projetos.projetochdedetizadora.model;
 
 public class Produto {
-    private Long id;
-    private String descricao;
-    private float quantidade;
-    private String unidade;
-    private float valorCusto;
-    private String fornecedor; //relaciomento
-    private String observacao;
+    private Long id; //NÃO pode ser nulo
+    private String descricao; //NÃO pode ser nulo
+    private float quantidade; //NÃO pode ser nulo
+    private String unidade; //NÃO pode ser nulo
+    private Double valorCusto; //NÃO pode ser nulo
+    private String idFornecedor; //RELACIONAMENTO
+    private String observacao; //PODE ser nulo
+    private String status; //NÃO pode ser nulo
 
     public Long getId() {
         return id;
@@ -42,20 +43,20 @@ public class Produto {
         this.unidade = unidade;
     }
 
-    public float getValorCusto() {
+    public Double getValorCusto() {
         return valorCusto;
     }
 
-    public void setValorCusto(float valorCusto) {
+    public void setValorCusto(Double valorCusto) {
         this.valorCusto = valorCusto;
     }
 
-    public String getFornecedor() {
-        return fornecedor;
+    public String getIdFornecedor() {
+        return idFornecedor;
     }
 
-    public void setFornecedor(String fornecedor) {
-        this.fornecedor = fornecedor;
+    public void setIdFornecedor(String idFornecedor) {
+        this.idFornecedor = idFornecedor;
     }
 
     public String getObservacao() {
@@ -64,6 +65,14 @@ public class Produto {
 
     public void setObservacao(String observacao) {
         this.observacao = observacao;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
     
     

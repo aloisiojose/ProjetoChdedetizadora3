@@ -2,10 +2,54 @@
 package com.projetos.projetochdedetizadora.model;
 
 public class Funcionario {
-    private Long id;
-    private String descricao;
-    private String funcao;
-    private char status;
+    private Long id; //NÃO pode ser nulo
+    private String descricao; //NÃO pode ser nulo
+    private String endereco; //NÃO pode ser nulo
+    private int num; //NÃO pode ser nulo
+    private String idCidade; //RELACIONAMENTO
+    private Long telefone1; //NÃO pode ser nulo
+    private String funcao; //NÃO pode ser nulo
+    private String status; //NÃO pode ser nulo
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    public String getIdCidade() {
+        return idCidade;
+    }
+
+    public void setIdCidade(String idCidade) {
+        this.idCidade = idCidade;
+    }
+
+    public Long getTelefone1() {
+        return telefone1;
+    }
+
+    public void setTelefone1(Long telefone1) {
+        this.telefone1 = telefone1;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public Long getId() {
         return id;
@@ -29,15 +73,6 @@ public class Funcionario {
 
     public void setFuncao(String funcao) {
         this.funcao = funcao;
-    }
-
-    public char getStatus() {
-        return status;
-    }
-
-    public void setStatus(char status) {
-        this.status = status;
-    }
-    
+    } 
     
 }

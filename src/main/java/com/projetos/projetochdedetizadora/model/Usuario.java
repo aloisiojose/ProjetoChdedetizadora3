@@ -2,9 +2,10 @@
 package com.projetos.projetochdedetizadora.model;
 
 public class Usuario {
-    private Long id;
-    private String login;
-    private String senha;
+    private Long id; //NÃO pode ser nulo
+    private String login; //NÃO pode ser nulo
+    private String senha; //NÃO pode ser nulo
+    private String confirmarSenha; //NÃO VAI SER ENVIADO PRO BANCO DE DADOS
 
     public Long getId() {
         return id;
@@ -28,6 +29,14 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String getConfirmarSenha() {
+        return confirmarSenha;
+    }
+
+    public void setConfirmarSenha(String confirmarSenha) {
+        this.confirmarSenha = confirmarSenha;
     }
     
     

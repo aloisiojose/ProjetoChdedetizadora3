@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="675.0" prefWidth="1246.0" styleClass="fundoPrincipal" stylesheets="@../styles/formulariopadrao.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.projetos.projetochdedetizadora.controller.OrdemDeServicoController">
+     <children>
+      <HBox fx:id="hbTopo" alignment="CENTER_LEFT" layoutX="15.0" layoutY="11.0" prefHeight="54.0" prefWidth="728.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="imgViewTitulo" fitHeight="34.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets left="10.0" right="5.0" />
+               </HBox.margin>
+               <image>
+                  <Image url="@../icons/icon_relatorio32.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblTitulo" alignment="CENTER" prefHeight="53.0" prefWidth="539.0" text="TITULO FORMULÁRIO">
+               <font>
+                  <Font name="Kokila Bold" size="36.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox fx:id="hbBase" alignment="CENTER" layoutX="14.0" layoutY="634.0" prefHeight="68.0" prefWidth="928.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Button fx:id="btnNovo" mnemonicParsing="false" onAction="#novoRegistro" prefHeight="47.0" prefWidth="105.0" text="NOVO">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icon_ordemServico32.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Novo Registro" />
+               </tooltip>
+            </Button>
+            <Button fx:id="btnSalvar" layoutX="379.0" layoutY="17.0" mnemonicParsing="false" onAction="#salvarRegistro" prefHeight="47.0" prefWidth="105.0" text="SALVAR">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" onDragDetected="#salvarRegistro" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icon_salvar32.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </HBox.margin>
+               <tooltip>
+                  <Tooltip text="Salvar Info" />
+               </tooltip>
+            </Button>
+            <Button fx:id="btnExcluir" layoutX="423.0" layoutY="17.0" mnemonicParsing="false" onAction="#excluirRegistro" prefHeight="47.0" prefWidth="105.0" text="EXCLUIR">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icon_sair32.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Excluir Registro" />
+               </tooltip>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <TableView fx:id="tableView" layoutX="22.0" layoutY="120.0" prefHeight="469.0" prefWidth="492.0" />
+      <GridPane layoutX="530.0" layoutY="79.0" prefHeight="512.0" prefWidth="692.0" vgap="10.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="124.0" minWidth="10.0" prefWidth="105.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="10.0" prefWidth="99.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="117.0" minWidth="10.0" prefWidth="102.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="10.0" prefWidth="99.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="90.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="73.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="95.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="95.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="95.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="27.0" minHeight="0.0" prefHeight="0.0" />
+            <RowConstraints maxHeight="71.0" minHeight="5.0" prefHeight="33.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="159.0" minHeight="10.0" prefHeight="52.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="66.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="275.0" minHeight="10.0" prefHeight="65.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="277.0" minHeight="10.0" prefHeight="64.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="236.0" minHeight="10.0" prefHeight="47.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="236.0" minHeight="10.0" prefHeight="47.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f0f3f5" height="70.0" opacity="0.61" stroke="BLACK" strokeType="INSIDE" width="508.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Rectangle>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f0f3f5" height="68.0" opacity="0.61" stroke="BLACK" strokeType="INSIDE" width="246.0" GridPane.rowIndex="5" />
+            <JFXTextField fx:id="tfId" editable="false" labelFloat="true" promptText="ID" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXDatePicker fx:id="dpDataPedido" defaultColor="#5a4f1d" prefHeight="28.0" prefWidth="208.0" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </JFXDatePicker>
+            <JFXComboBox fx:id="cbCliente" labelFloat="true" prefHeight="25.0" prefWidth="321.0" promptText="CLIENTE*" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </JFXComboBox>
+            <JFXTextField fx:id="tfPraga" labelFloat="true" prefHeight="30.0" prefWidth="208.0" promptText="PRAGA" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="10.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXDatePicker fx:id="dpDataServico" defaultColor="#5a4f1d" prefHeight="28.0" prefWidth="209.0" GridPane.columnIndex="6" GridPane.columnSpan="3" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></JFXDatePicker>
+            <JFXComboBox fx:id="cbVeneno" labelFloat="true" prefHeight="27.0" prefWidth="246.0" promptText="VENENO*" styleClass="jfx-combo-box" GridPane.columnSpan="3" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets bottom="20.0" />
+               </GridPane.margin>
+            </JFXComboBox>
+            <JFXTextField fx:id="tfValor" labelFloat="true" prefHeight="30.0" prefWidth="279.0" promptText="VALOR" GridPane.columnSpan="3" GridPane.rowIndex="7">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin>
+            </JFXTextField>
+            <JFXComboBox fx:id="cbFuncionario" labelFloat="true" prefHeight="25.0" prefWidth="244.0" promptText="FUNCIONÁRIO*" GridPane.columnSpan="4" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </JFXComboBox>
+            <JFXComboBox fx:id="cbCidade" labelFloat="true" prefHeight="25.0" prefWidth="245.0" promptText="CIDADE*" GridPane.columnSpan="3" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin>
+            </JFXComboBox>
+            <Label prefHeight="20.0" prefWidth="97.0" text="DATA SERVIÇO" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="25.0" left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="17.0" prefWidth="103.0" text="DATA PEDIDO" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="25.0" left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <JFXComboBox fx:id="cbLocal" labelFloat="true" prefHeight="25.0" prefWidth="199.0" promptText="LOCAL*" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </GridPane.margin>
+            </JFXComboBox>
+            <JFXTextField fx:id="tfComplemento" labelFloat="true" prefHeight="30.0" prefWidth="276.0" promptText="COMPLEMENTO" GridPane.columnIndex="6" GridPane.columnSpan="3" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </GridPane.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="tfArea" labelFloat="true" prefHeight="30.0" prefWidth="162.0" promptText="AREA (M2)*" GridPane.columnSpan="2" GridPane.rowIndex="4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="15.0" right="10.0" />
+               </GridPane.margin>
+            </JFXTextField>
+            <CheckBox fx:id="chAtivo" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="ATIVO" GridPane.columnIndex="8" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="20.0" left="5.0" />
+               </GridPane.margin>
+            </CheckBox>
+            <JFXRadioButton fx:id="rbSitOrcamento" prefHeight="20.0" prefWidth="94.0" text="Orçamento" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <toggleGroup>
+                  <ToggleGroup fx:id="situacao" />
+               </toggleGroup>
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="20.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXRadioButton>
+            <Label prefHeight="20.0" prefWidth="134.0" text="SITUAÇÃO DA VISITA" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets bottom="40.0" left="20.0" />
+               </GridPane.margin>
+            </Label>
+            <JFXRadioButton fx:id="rbModContrato" text="Contrato" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </GridPane.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="modalidade" />
+               </toggleGroup>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="rbModOrcamento" text="Orçamento" toggleGroup="$modalidade" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="40.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXRadioButton>
+            <Label prefHeight="17.0" prefWidth="223.0" text="MODALIDADE DA O.S." GridPane.columnSpan="2" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets bottom="40.0" left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <JFXTextField fx:id="tfGarantia" labelFloat="true" prefHeight="30.0" prefWidth="183.0" promptText="GARANTIA" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="5">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="15.0" />
+               </GridPane.margin>
+            </JFXTextField>
+            <Label text="MESES" GridPane.columnIndex="8" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <TableView fx:id="tableViewLista" prefHeight="144.0" prefWidth="333.0" GridPane.columnIndex="3" GridPane.columnSpan="6" GridPane.rowIndex="6" GridPane.rowSpan="2">
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </TableView>
+            <JFXTextField fx:id="tfTelefone" labelFloat="true" prefHeight="30.0" prefWidth="177.0" promptText="TELEFONE" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </JFXTextField>
+            <JFXRadioButton fx:id="rbSitDedetizacao" text="Dedetização" toggleGroup="$situacao" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="60.0" />
+               </GridPane.margin>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="rbSitGarantia" text="Garantia" toggleGroup="$situacao" GridPane.columnIndex="5" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="30.0" />
+               </GridPane.margin></JFXRadioButton>
+            <JFXRadioButton fx:id="rbSitManutencao" text="Manutenção" toggleGroup="$situacao" GridPane.columnIndex="6" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="75.0" />
+               </GridPane.margin>
+            </JFXRadioButton>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+         <styleClass>
+            <String fx:value="gridPane" />
+            <String fx:value="textFild" />
+         </styleClass>
+      </GridPane>
+      <ImageView fitHeight="40.0" fitWidth="39.0" layoutX="22.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/icon_pesquisar32v2.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="tfPesquisar" labelFloat="true" layoutX="67.0" layoutY="85.0" prefHeight="31.0" prefWidth="445.0" promptText="PESQUISAR" />
+   </children>
+</AnchorPane>

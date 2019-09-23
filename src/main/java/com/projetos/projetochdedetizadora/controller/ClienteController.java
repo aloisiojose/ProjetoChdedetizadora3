@@ -15,12 +15,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import static jdk.nashorn.internal.objects.NativeString.toUpperCase;
 
-
-public class FornecedorController implements Initializable {
+public class ClienteController implements Initializable {
 
     @FXML private HBox hbTopo;
     @FXML private ImageView imgViewTitulo;
@@ -30,22 +28,23 @@ public class FornecedorController implements Initializable {
     @FXML private Button btnSalvar;
     @FXML private Button btnExcluir;
     @FXML private TableView<?> tableView;
-    @FXML private CheckBox chAtivo;
     @FXML private JFXTextField tfId;
-    @FXML private JFXTextField tfDescricao;
-    @FXML private JFXTextField tfCpf;
     @FXML private JFXTextField tfEndereco;
-    @FXML private JFXTextField tfNum;
-    @FXML private JFXTextField tfComplemento;
     @FXML private JFXComboBox<?> cbCidade;
-    @FXML private JFXTextField tfTelefone;
-    @FXML private JFXTextField tfCelular;
-    @FXML private JFXComboBox<?> cbTipoPessoa;
     @FXML private JFXTextField tfEmail;
     @FXML private JFXTextField tfObservacao;
     @FXML private JFXTextField tfPesquisar;
-    @FXML private JFXTextField tfInsEstadual;
-    
+    @FXML private CheckBox chAtivo;
+    @FXML private JFXTextField tfCep;
+    @FXML private JFXTextField tfTelefone1;
+    @FXML private JFXTextField tfTelefone2;
+    @FXML private JFXTextField tfTelefone3;
+    @FXML private JFXTextField tfCpfCnpj;
+    @FXML private JFXTextField tfDescricao;
+    @FXML private JFXComboBox<?> cbTipoPessoa;
+    @FXML private JFXTextField tfNum;
+    @FXML private JFXTextField tfComplemento;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //-----> Configuração da barra de título do form
@@ -65,5 +64,5 @@ public class FornecedorController implements Initializable {
     @FXML
     private void excluirRegistro(ActionEvent event) {
     }
-  
+    
 }
