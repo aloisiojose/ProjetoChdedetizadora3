@@ -12,58 +12,59 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="cliente")
-
 public class Cliente implements Serializable {
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)//auto icremente
     @Column(name="id", nullable = false)//coluna no banco de dados
-    private Long id; //NÃO pode ser nulo
+    private Long id;
     
-    @Column(name="descricao",length = 100, nullable = false)
+    @Column(name="descricao", length = 100, nullable = false)
     private String descricao; //NÃO pode ser nulo
     
-    @Column(name="endereço",length = 100, nullable = true)
+    @Column(name="endereco", length = 100, nullable = true)
     private String endereco; //PODE ser nulo
     
-    @Column(name="numero",length =15, nullable = false)
+    @Column(name="numero", length =6, nullable = true)
     private int num; //PODE ser nulo
     
-    @Column(name="complemento",length = 100, nullable = false)
+    @Column(name="complemento", length = 15, nullable = true)
     private String complemento; //PODE ser nulo
     
     @OneToOne
-    private String idCidade; //RELACIONAMENTO
+    private Cidade cidade; //RELACIONAMENTO
     
-    @Column(name="cep",length = 8, nullable = false)
+    @Column(name="cep", length = 8, nullable = false)
     private Long cep; //NÃO pode ser nulo
     
-    @Column(name="telefone 1",length = 15, nullable = false)
+    @Column(name="telefone1", length = 15, nullable = false)
     private Long telefone1; //NÃO pode ser nulo
     
-    @Column(name="telefone 2",length =15, nullable = true) 
+    @Column(name="telefone2", length =15, nullable = true) 
     private Long telefone2; //PODE ser nulo
    
-    @Column(name="telefone 3",length =15, nullable = true)
+    @Column(name="telefone3", length =15, nullable = true)
     private Long telefone3;//PODE ser nulo
    
-    @Column(name="email",length =100, nullable = true)
+    @Column(name="email", length =100, nullable = true)
     private String email; //PODE ser nulo
    
-    @Column(name="tipo de pessoa",length =100, nullable = false)
+    @Column(name="tipo_de_pessoa", length =16, nullable = false)
     private String tipoPessoa; //NÃO pode ser nulo
    
-    @Column(name="cpf,cnpj",length =15, nullable = true)
+    @Column(name="cpf_cnpj", length =15, nullable = true)
     private Long cpf_cnpj; //PODE ser nulo
    
-    @Column(name="inscrição estadual",length =15, nullable = true)
+    @Column(name="insc_estadual", length =15, nullable = true)
     private String inscricaoEstatual; //PODE ser nulo
    
-    @Column(name="status",length =100, nullable = false)
+    @Column(name="status", length =2, nullable = false)
     private String status; //NÃO PODE ser nulo
    
-    @Column(name="obserrvação",length =100, nullable = true)
+    @Column(name="observacao", length =100, nullable = true)
     private String observacao; //PODE ser nulo
 
+    
+    
     public Long getId() {
         return id;
     }
@@ -88,12 +89,12 @@ public class Cliente implements Serializable {
         this.endereco = endereco;
     }
 
-    public String getIdCidade() {
-        return idCidade;
+    public Cidade getIdCidade() {
+        return cidade;
     }
 
-    public void setIdCidade(String idCidade) {
-        this.idCidade = idCidade;
+    public void setIdCidade(Cidade cidade) {
+        this.cidade = cidade;
     }
 
     public Long getCep() {

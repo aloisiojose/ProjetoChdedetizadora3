@@ -11,11 +11,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="cidade")
-
 public class Cidade implements Serializable  {
-   
     @Id //chave primaria
-    @GeneratedValue(strategy =GenerationType.IDENTITY)//auto icremente
+    @GeneratedValue(strategy =GenerationType.IDENTITY)//auto incremente
     @Column(name="id", nullable = false)//coluna no banco de dados
     private Long id; //NÃO pode ser nulo
    
@@ -28,9 +26,11 @@ public class Cidade implements Serializable  {
     @Column(name="cep",length = 8, nullable = false)
     private Long cep; //NÃO pode ser nulo
      
-    @Column(name="status",length = 100, nullable = false)
+    @Column(name="status",length = 2, nullable = false)
     private String status; //NÃO pode ser nulo
 
+    
+    
     public Long getId() {
         return id;
     }
