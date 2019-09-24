@@ -63,7 +63,7 @@
             </Button>
             <Button fx:id="btnSalvar" layoutX="379.0" layoutY="17.0" mnemonicParsing="false" onAction="#salvarRegistro" prefHeight="47.0" prefWidth="105.0" text="SALVAR">
                <graphic>
-                  <ImageView fitHeight="24.0" fitWidth="24.0" onDragDetected="#salvarRegistro" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../icons/icon_salvar32.png" />
                      </image>
