@@ -22,7 +22,7 @@ import javafx.scene.layout.HBox;
 import static jdk.nashorn.internal.objects.NativeString.toUpperCase;
 
 
-public class CidadeController implements Initializable {
+public class CidadeController implements Initializable, ICadastro {
 
     @FXML private HBox hbTopo;
     @FXML private ImageView imgViewTitulo;
@@ -66,5 +66,20 @@ public class CidadeController implements Initializable {
     @FXML
     private void excluirRegistro(ActionEvent event) {
     }
-    
+
+    @Override
+    public void criarColunasTabela() {
+    }
+
+    @Override
+    public void atualizarTabela() {
+    }
+
+    @Override
+    public void setCamposFormulario() {
+    }
+
+    @Override
+    public void limparCamposFormulario() {
+    }
 }

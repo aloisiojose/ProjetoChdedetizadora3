@@ -1,24 +1,22 @@
+
 package com.projetos.projetochdedetizadora.controller;
 
-import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
-import static com.projetos.projetochdedetizadora.controller.TelaPrincipalController.icone;
-import static com.projetos.projetochdedetizadora.controller.TelaPrincipalController.titulo;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
-import static jdk.nashorn.internal.objects.NativeString.toUpperCase;
 
-public class UsuarioController implements Initializable, ICadastro {
+
+public class CompraController implements Initializable {
 
     @FXML private HBox hbTopo;
     @FXML private ImageView imgViewTitulo;
@@ -29,18 +27,15 @@ public class UsuarioController implements Initializable, ICadastro {
     @FXML private Button btnExcluir;
     @FXML private TableView<?> tableView;
     @FXML private JFXTextField tfId;
+    @FXML private JFXTextField tfObservacao;
     @FXML private JFXTextField tfPesquisar;
-    @FXML private CheckBox chAtivo;
-    @FXML private JFXPasswordField pwSenha;
-    @FXML private JFXPasswordField pwConfirmarSenha;
-    @FXML private JFXTextField tfLogin;
+    @FXML private JFXTextField tfValorCompra;
+    @FXML private JFXDatePicker dpDataCompra;
+    @FXML private JFXComboBox<?> cbFornecedor;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //-----> Configuração da barra de título do form
-        lblTitulo.setText("CADASTRO DE "+ toUpperCase(titulo));
-        Image img = new Image(icone);
-        imgViewTitulo.setImage(img);
+        // TODO
     }    
 
     @FXML
@@ -53,22 +48,6 @@ public class UsuarioController implements Initializable, ICadastro {
 
     @FXML
     private void excluirRegistro(ActionEvent event) {
-    }
-
-    @Override
-    public void criarColunasTabela() {
-    }
-
-    @Override
-    public void atualizarTabela() {
-    }
-
-    @Override
-    public void setCamposFormulario() {
-    }
-
-    @Override
-    public void limparCamposFormulario() {
     }
     
 }
