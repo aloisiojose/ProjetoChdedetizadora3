@@ -5,6 +5,8 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import static com.projetos.projetochdedetizadora.controller.TelaPrincipalController.icone;
 import static com.projetos.projetochdedetizadora.controller.TelaPrincipalController.titulo;
+import com.projetos.projetochdedetizadora.dao.CidadeDao;
+import com.projetos.projetochdedetizadora.model.Cidade;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -36,7 +38,10 @@ public class CidadeController implements Initializable, ICadastro {
     @FXML private JFXTextField tfCep;
     @FXML private JFXTextField tfDescricao;
     @FXML private JFXComboBox<?> cbUf;
-
+    CidadeDao dao = new CidadeDao();
+    
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //-----> Configuração da barra de título do form
@@ -52,6 +57,10 @@ public class CidadeController implements Initializable, ICadastro {
 
     @FXML
     private void salvarRegistro(ActionEvent event) {
+        Cidade cidade = new Cidade();
+        cidade.setDescricao(tfDescricao.getText());
+        
+        dao.salvar(cidade);
     }
 
     @FXML

@@ -36,6 +36,7 @@ public class Cliente implements Serializable {
     @Column(name="cep", length = 8, nullable = false)
     private Long cep; //NÃO pode ser nulo
     
+
     @Column(name="telefone1", length = 15, nullable = false)
     private Long telefone1; //NÃO pode ser nulo
     
@@ -43,11 +44,12 @@ public class Cliente implements Serializable {
     private Long telefone2; //PODE ser nulo
    
     @Column(name="telefone3", length =15, nullable = true)
+
     private Long telefone3;//PODE ser nulo
    
     @Column(name="email", length =100, nullable = true)
     private String email; //PODE ser nulo
-   
+
     @Column(name="tipo_de_pessoa", length =16, nullable = false)
     private String tipoPessoa; //NÃO pode ser nulo
    
