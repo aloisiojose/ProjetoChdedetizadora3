@@ -26,10 +26,9 @@ public class Cidade implements Serializable  {
     @Column(name="cep",length = 8, nullable = false)
     private Long cep; //NÃO pode ser nulo
      
-    @Column(name="status",length = 2, nullable = false)
-    private String status; //NÃO pode ser nulo
-
-    
+    @Column(name="status", nullable = false)
+    private boolean status; //NÃO pode ser nulo
+  
     
     public Long getId() {
         return id;
@@ -63,13 +62,12 @@ public class Cidade implements Serializable  {
         this.cep = cep;
     }
 
-    public String getStatus() {
+    public boolean getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
-    
     
 }
