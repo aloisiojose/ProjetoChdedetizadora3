@@ -7,6 +7,7 @@ import static com.projetos.projetochdedetizadora.controller.TelaPrincipalControl
 import static com.projetos.projetochdedetizadora.controller.TelaPrincipalController.titulo;
 import com.projetos.projetochdedetizadora.dao.CidadeDao;
 import com.projetos.projetochdedetizadora.model.Cidade;
+import com.projetos.projetochdedetizadora.util.UF;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -50,6 +51,9 @@ public class CidadeController implements Initializable, ICadastro {
         lblTitulo.setText("CADASTRO DE "+ toUpperCase(titulo));
         Image img = new Image(icone);
         imgViewTitulo.setImage(img);
+        
+        //----> CARREGAMENTO DO COMBOBOX UF
+        cbUf.setItems(UF.gerarUF());
 
     }    
 
@@ -69,7 +73,7 @@ public class CidadeController implements Initializable, ICadastro {
         //capturando os dados dos componentes da tela
         objeto.setDescricao(tfDescricao.getText());
         objeto.setCep(Long.parseLong(tfCep.getText()));
-        //objeto.setUf(cbUf.getValue()); //valor do combobox
+        objeto.setUf(cbUf.getValue()); //valor do combobox
         
         if (chAtivo.isSelected()){
             objeto.setStatus(true);
