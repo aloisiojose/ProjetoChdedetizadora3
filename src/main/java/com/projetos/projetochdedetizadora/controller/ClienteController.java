@@ -44,6 +44,9 @@ public class ClienteController implements Initializable, ICadastro {
     @FXML private JFXComboBox<?> cbTipoPessoa;
     @FXML private JFXTextField tfNum;
     @FXML private JFXTextField tfComplemento;
+    
+    //variáveis para uso "interno" da classe
+    
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -59,6 +62,7 @@ public class ClienteController implements Initializable, ICadastro {
 
     @FXML
     private void salvarRegistro(ActionEvent event) {
+        
     }
 
     @FXML

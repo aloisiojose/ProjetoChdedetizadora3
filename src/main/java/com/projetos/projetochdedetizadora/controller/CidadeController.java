@@ -31,17 +31,19 @@ public class CidadeController implements Initializable, ICadastro {
     @FXML private Button btnNovo;
     @FXML private Button btnSalvar;
     @FXML private Button btnExcluir;
-    @FXML private TableView<?> tableView;
+    @FXML private TableView<Cidade> tableView;
     @FXML private JFXTextField tfId;
     @FXML private JFXTextField tfPesquisar;
     @FXML private CheckBox chAtivo;
     @FXML private JFXTextField tfCep;
     @FXML private JFXTextField tfDescricao;
-    @FXML private JFXComboBox<?> cbUf;
-    CidadeDao dao = new CidadeDao();
+    @FXML private JFXComboBox<String> cbUf;
     
-    
-    
+    //variáveis para uso "interno" da classe
+    private CidadeDao dao = new CidadeDao();
+    private Cidade objetoSelecionado = new Cidade();
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //-----> Configuração da barra de título do form
@@ -57,10 +59,29 @@ public class CidadeController implements Initializable, ICadastro {
 
     @FXML
     private void salvarRegistro(ActionEvent event) {
-        Cidade cidade = new Cidade();
-        cidade.setDescricao(tfDescricao.getText());
+        Cidade objeto = new Cidade();
         
-        dao.salvar(cidade);
+        //testa se o objeto não está vazio
+        if (objetoSelecionado != null) {
+            objeto.setId(objetoSelecionado.getId());
+        }
+        
+        //capturando os dados dos componentes da tela
+        objeto.setDescricao(tfDescricao.getText());
+        objeto.setCep(Long.parseLong(tfCep.getText()));
+        //objeto.setUf(cbUf.getValue()); //valor do combobox
+        
+        if (chAtivo.isSelected()){
+            objeto.setStatus(true);
+        } else {
+            objeto.setStatus(false);
+        }
+        
+        //verifica o retorno do método salvar.
+        dao.salvar(objeto);
+        
+        atualizarTabela();
+        limparCamposFormulario();
     }
 
     @FXML
