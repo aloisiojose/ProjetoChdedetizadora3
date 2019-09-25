@@ -26,7 +26,7 @@ import javafx.scene.layout.HBox;
  *
  * @author alois
  */
-public class Usuario_viewController implements Initializable {
+public class ClienteController implements Initializable {
 
     @FXML
     private HBox hbTopo;
@@ -47,25 +47,11 @@ public class Usuario_viewController implements Initializable {
     @FXML
     private JFXTextField tfId;
     @FXML
-    private JFXTextField tfDescricao;
-    @FXML
-    private JFXTextField tfCpf;
-    @FXML
-    private JFXDatePicker dpData;
-    @FXML
     private JFXTextField tfEndereco;
-    @FXML
-    private JFXTextField tfNum;
-    @FXML
-    private JFXTextField tfComplemento;
     @FXML
     private JFXComboBox<?> cbCidade;
     @FXML
-    private JFXTextField tfTelefone;
-    @FXML
     private JFXTextField tfCelular;
-    @FXML
-    private JFXComboBox<?> cbTipoPessoa;
     @FXML
     private JFXTextField tfEmail;
     @FXML
@@ -74,6 +60,20 @@ public class Usuario_viewController implements Initializable {
     private JFXTextField tfPesquisar;
     @FXML
     private CheckBox chAtivo;
+    @FXML
+    private JFXTextField tfNome;
+    @FXML
+    private JFXTextField tfCep;
+    @FXML
+    private JFXTextField tfTelefone1;
+    @FXML
+    private JFXTextField tfTelefone2;
+    @FXML
+    private JFXTextField tfTelefone3;
+    @FXML
+    private JFXComboBox<?> cbCidade1;
+    @FXML
+    private JFXTextField tfCpfCnpj;
 
     /**
      * Initializes the controller class.

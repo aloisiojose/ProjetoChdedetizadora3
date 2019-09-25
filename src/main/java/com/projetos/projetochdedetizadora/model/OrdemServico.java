@@ -1,23 +1,63 @@
 
 package com.projetos.projetochdedetizadora.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class OrdemServico {
+@Entity
+@Table(name="ordemServico")
+public class OrdemServico implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private Long id;
+    
+    @Column(name = "cliente_ordemServico", length = 100, nullable = false)
     private String cliente;  //relaciomento
+    
+    @Column(name = "cidade_ordemServico", length = 100, nullable = false)
     private String cidade; //relaciomento
+    
+    @Column(name = "funcionario_ordemServico", length = 100, nullable = false)
     private String funcionario;  //relaciomento
+    
+    @Column(name = "data_Pedido_ordemServico", length = 100, nullable = false)
     private LocalDate dataPedido;
+    
+    @Column(name = "dataServico_ordemServico", length = 100, nullable = false)
     private LocalDate dataServico;
+    
+    @Column(name = "local_ordemServico", length = 100, nullable = false)
     private String local;
+    
+    @Column(name = "complemento_ordemServico", length = 100, nullable = false)
     private String complemento;
+    
+    @Column(name = "area_ordemServico", precision = 10, scale = 2, nullable = false)
     private float area;
+    
+    @Column(name = "situacao_ordemServico", length = 100, nullable = false)
     private String situacao;
+    
+    @Column(name = "praga_ordemServico", length = 100, nullable = false)
     private String praga;
+    
+    @Column(name = "produto_ordemServico", length = 100, nullable = false)
     private String produto;  //relaciomento
+    
+    @Column(name = "modalidade_ordemServico", length = 100, nullable = false)
     private String modalidade;
+    
+    @Column(name = "tempoGarantia_ordemServico", length = 100, nullable = false)
     private int tempoGarantia;
+    
+    @Column(name = "valor_custo_ordemServico", precision = 10, scale = 2, nullable = false)
     private double valor;
 
     public Long getId() {

@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.projetos.projetochdedetizadora.controller;
 
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,7 +20,7 @@ import javafx.scene.layout.HBox;
  *
  * @author alois
  */
-public class Cliente_viewController implements Initializable {
+public class CidadeController implements Initializable {
 
     @FXML
     private HBox hbTopo;
@@ -47,16 +41,6 @@ public class Cliente_viewController implements Initializable {
     @FXML
     private JFXTextField tfId;
     @FXML
-    private JFXTextField tfEndereco;
-    @FXML
-    private JFXComboBox<?> cbCidade;
-    @FXML
-    private JFXTextField tfCelular;
-    @FXML
-    private JFXTextField tfEmail;
-    @FXML
-    private JFXTextField tfObservacao;
-    @FXML
     private JFXTextField tfPesquisar;
     @FXML
     private CheckBox chAtivo;
@@ -64,16 +48,6 @@ public class Cliente_viewController implements Initializable {
     private JFXTextField tfNome;
     @FXML
     private JFXTextField tfCep;
-    @FXML
-    private JFXTextField tfTelefone1;
-    @FXML
-    private JFXTextField tfTelefone2;
-    @FXML
-    private JFXTextField tfTelefone3;
-    @FXML
-    private JFXComboBox<?> cbCidade1;
-    @FXML
-    private JFXTextField tfCpfCnpj;
 
     /**
      * Initializes the controller class.
