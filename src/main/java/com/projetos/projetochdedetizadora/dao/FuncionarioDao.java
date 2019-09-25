@@ -6,7 +6,7 @@ import org.hibernate.Session;
 
 
 public class FuncionarioDao {
-      public boolean salvar(Funcionario funcionario) {
+   public boolean salvar(Funcionario funcionario) {
          try {
              try (Session session = ConexaoBanco.getSessionFactory().openSession()) {
                  session.beginTransaction();
@@ -17,6 +17,7 @@ public class FuncionarioDao {
             }catch (Exception erro) {
           System.out.println("Ocorreu o erro:" + erro);
         }  
-        return false;
+        return false;    
+        
     
 }}

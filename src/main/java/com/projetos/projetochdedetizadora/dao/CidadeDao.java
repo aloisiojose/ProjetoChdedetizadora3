@@ -8,6 +8,7 @@ import org.hibernate.Session;
 public class CidadeDao {
  
     public boolean salvar(Cidade cidade) {
+     
          try {
              try (Session session = ConexaoBanco.getSessionFactory().openSession()) {
                  session.beginTransaction();
@@ -19,9 +20,6 @@ public class CidadeDao {
           System.out.println("Ocorreu o erro:" + erro);
         }  
         return false;
-
-           
-          
-       
+              
     
 }}
