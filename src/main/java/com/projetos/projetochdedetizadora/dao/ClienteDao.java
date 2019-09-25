@@ -6,17 +6,16 @@ import org.hibernate.Session;
 
 
 public class ClienteDao {
-     public void salvar(Cliente cliente) {
     
-         try {
-             try (Session session = ConexaoBanco.getSessionFactory().openSession()) {
-                 session.beginTransaction();
-                 session.merge(cliente);
-                 session.getTransaction().commit();
-             }
+    public void salvar(Cliente cliente) {
+        try {
+            Session session = ConexaoBanco.getSessionFactory().openSession();
+            session.beginTransaction();
+            session.merge(cliente);
+            session.getTransaction().commit();
             System.out.println("Registro gravado com sucesso");
-             }catch (Exception erro) {
-          System.out.println("Ocorreu o erro:" + erro); 
-            } 
-        }   
+        }catch (Exception erro) {
+            System.out.println("Ocorreu o erro:" + erro); 
+        } 
+    }   
 }

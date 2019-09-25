@@ -16,11 +16,7 @@ public class CidadeDao {
             System.out.println("Registro gravado com sucesso");
         }catch (Exception erro) {
           System.out.println("Ocorreu o erro:" + erro);
-        } 
-        
+        }  
     }
-    
-    
-    
 }
 
