@@ -4,6 +4,9 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import static com.projetos.projetochdedetizadora.controller.TelaPrincipalController.icone;
 import static com.projetos.projetochdedetizadora.controller.TelaPrincipalController.titulo;
+import com.projetos.projetochdedetizadora.dao.ClienteDao;
+import com.projetos.projetochdedetizadora.model.Cidade;
+import com.projetos.projetochdedetizadora.model.Cliente;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -27,10 +30,10 @@ public class ClienteController implements Initializable, ICadastro {
     @FXML private Button btnNovo;
     @FXML private Button btnSalvar;
     @FXML private Button btnExcluir;
-    @FXML private TableView<?> tableView;
+    @FXML private TableView<Cliente> tableView;
     @FXML private JFXTextField tfId;
     @FXML private JFXTextField tfEndereco;
-    @FXML private JFXComboBox<?> cbCidade;
+    @FXML private JFXComboBox<Cidade> cbCidade;
     @FXML private JFXTextField tfEmail;
     @FXML private JFXTextField tfObservacao;
     @FXML private JFXTextField tfPesquisar;
@@ -41,11 +44,13 @@ public class ClienteController implements Initializable, ICadastro {
     @FXML private JFXTextField tfTelefone3;
     @FXML private JFXTextField tfCpfCnpj;
     @FXML private JFXTextField tfDescricao;
-    @FXML private JFXComboBox<?> cbTipoPessoa;
+    @FXML private JFXComboBox<String> cbTipoPessoa;
     @FXML private JFXTextField tfNum;
     @FXML private JFXTextField tfComplemento;
     
     //variáveis para uso "interno" da classe
+    private ClienteDao dao = new ClienteDao();
+    private Cliente objetoSelecionado = new Cliente();
     
 
     @Override
@@ -62,6 +67,19 @@ public class ClienteController implements Initializable, ICadastro {
 
     @FXML
     private void salvarRegistro(ActionEvent event) {
+        Cliente objeto = new Cliente();
+        
+        //testa se o objeto não está vazio
+        if (objetoSelecionado != null) {
+            objeto.setId(objetoSelecionado.getId());
+        }
+        
+        objeto.setDescricao(tfDescricao.getText());
+        objeto.setEndereco(tfEndereco.getText());
+        objeto.setNum(Integer.parseInt(tfNum.getText()));
+        objeto.setComplemento(tfComplemento.getText());
+        /* cbCidade banco */
+        objeto.setCep(Long.parseLong(tfCep.getText()));
         
     }
 
