@@ -2,11 +2,14 @@
 package com.projetos.projetochdedetizadora.dao;
 
 import com.projetos.projetochdedetizadora.model.Funcionario;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
 
 public class FuncionarioDao {
+    
+    private ObservableList<Funcionario> obsList = FXCollections.observableArrayList();
     
     public void salvar(Funcionario funcionario) {
         try {
@@ -14,11 +17,13 @@ public class FuncionarioDao {
             session.beginTransaction();
             session.merge(funcionario);
             session.getTransaction().commit();
+            session.close();
             System.out.println("Registro gravado com sucesso");
         }catch (HibernateException erro) {
             System.out.println("Ocorreu o erro:" + erro);
         }  
     }
+
       public void excluir(Funcionario funcionario) {
         try {
             Session session = ConexaoBanco.getSessionFactory().openSession();
@@ -30,5 +35,6 @@ public class FuncionarioDao {
         } catch (HibernateException erro) {
             System.out.println("Ocorreu o erro: " + erro);
         }
+
     }
 }

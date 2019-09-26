@@ -4,9 +4,11 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import static com.projetos.projetochdedetizadora.controller.TelaPrincipalController.icone;
 import static com.projetos.projetochdedetizadora.controller.TelaPrincipalController.titulo;
+import com.projetos.projetochdedetizadora.dao.CidadeDao;
 import com.projetos.projetochdedetizadora.dao.ClienteDao;
 import com.projetos.projetochdedetizadora.model.Cidade;
 import com.projetos.projetochdedetizadora.model.Cliente;
+import com.projetos.projetochdedetizadora.util.TipoPessoa;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -51,6 +53,7 @@ public class ClienteController implements Initializable, ICadastro {
     //variáveis para uso "interno" da classe
     private ClienteDao dao = new ClienteDao();
     private Cliente objetoSelecionado = new Cliente();
+    private CidadeDao daoCidade = new CidadeDao();
     
 
     @Override
@@ -59,6 +62,10 @@ public class ClienteController implements Initializable, ICadastro {
         lblTitulo.setText("CADASTRO DE "+ toUpperCase(titulo));
         Image img = new Image(icone);
         imgViewTitulo.setImage(img);
+        
+        //----> CARREGAMENTO DO COMBOBOX
+        cbTipoPessoa.setItems(TipoPessoa.tipoPessoa());
+        cbCidade.setItems(daoCidade.comboBoxCidade());
     }    
 
     @FXML
@@ -80,7 +87,25 @@ public class ClienteController implements Initializable, ICadastro {
         objeto.setComplemento(tfComplemento.getText());
         /* cbCidade banco */
         objeto.setCep(Long.parseLong(tfCep.getText()));
+        objeto.setTelefone1(Long.parseLong(tfTelefone1.getText()));
+        objeto.setTelefone2(Long.parseLong(tfTelefone2.getText()));
+        objeto.setTelefone3(Long.parseLong(tfTelefone3.getText()));
+        objeto.setTipoPessoa(cbTipoPessoa.getValue());
+        objeto.setCpf_cnpj(Long.parseLong(tfCpfCnpj.getText()));
+        objeto.setEmail(tfEmail.getText());
+        objeto.setObservacao(tfObservacao.getText());
         
+        if (chAtivo.isSelected()){
+            objeto.setStatus(true);
+        } else {
+            objeto.setStatus(false);
+        }
+        
+        //verifica o retorno do método salvar.
+        dao.salvar(objeto);
+        
+        atualizarTabela();
+        limparCamposFormulario();
     }
 
     @FXML

@@ -2,11 +2,14 @@
 package com.projetos.projetochdedetizadora.dao;
 
 import com.projetos.projetochdedetizadora.model.Fornecedor;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
 
 public class FornecedorDao {
+    
+    private ObservableList<Fornecedor> obsList = FXCollections.observableArrayList();
     
     public void salvar(Fornecedor fornecedor) {
         try {
@@ -14,11 +17,13 @@ public class FornecedorDao {
             session.beginTransaction();
             session.merge(fornecedor);
             session.getTransaction().commit();
+            session.close();
             System.out.println("Registro gravado com sucesso");
         }catch (HibernateException erro) {
             System.out.println("Ocorreu o erro:" + erro);
         }
     }
+
       public void excluir(Fornecedor fornecedor) {
         try {
             Session session = ConexaoBanco.getSessionFactory().openSession();
@@ -30,5 +35,6 @@ public class FornecedorDao {
         } catch (HibernateException erro) {
             System.out.println("Ocorreu o erro: " + erro);
         }
+
     }
 }
