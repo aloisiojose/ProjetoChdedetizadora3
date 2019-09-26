@@ -1,6 +1,7 @@
 
 package com.projetos.projetochdedetizadora.model;
 
+<<<<<<< HEAD
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -35,6 +36,17 @@ public class Produto implements Serializable {
     
     @Column(name = "observacao_produto", length = 100, nullable = false)
     private String observacao;
+=======
+public class Produto {
+    private Long id; //NÃO pode ser nulo
+    private String descricao; //NÃO pode ser nulo
+    private float quantidade; //NÃO pode ser nulo
+    private String unidade; //NÃO pode ser nulo
+    private Double valorCusto; //NÃO pode ser nulo
+    private String idFornecedor; //RELACIONAMENTO
+    private String observacao; //PODE ser nulo
+    private String status; //NÃO pode ser nulo
+>>>>>>> parent of db85a7f... mapeamento_aloisio
 
     public Long getId() {
         return id;

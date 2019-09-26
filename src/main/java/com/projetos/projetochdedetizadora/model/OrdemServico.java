@@ -1,8 +1,8 @@
 
 package com.projetos.projetochdedetizadora.model;
 
-import java.io.Serializable;
 import java.time.LocalDate;
+<<<<<<< HEAD
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -59,6 +59,25 @@ public class OrdemServico implements Serializable {
     
     @Column(name = "valor_custo_ordemServico", precision = 10, scale = 2, nullable = false)
     private double valor;
+=======
+
+public class OrdemServico {
+    private Long id; //NÃO pode ser nulo
+    private String idCliente;  //RELACIONAMENTO
+    private String idCidade; //RELACIONAMENTO
+    private String idFuncionario;  //RELACIONAMENTO
+    private LocalDate dataPedido; //NÃO pode ser nulo
+    private LocalDate dataServico; //PODE ser nulo
+    private String local; //NÃO pode ser nulo
+    private String complemento; //PODE ser nulo
+    private float area; //PODE ser nulo
+    private String situacaoVisita; //NÃO pode ser nulo
+    private String praga; //PODE ser nulo
+    private String idProduto;  //RELACIONAMENTO
+    private String modalidadeOrdemServico; //NÃO pode ser nulo
+    private int tempoGarantia; //PODE ser nulo
+    private double valor; //PODE ser nulo
+>>>>>>> parent of db85a7f... mapeamento_aloisio
 
     public Long getId() {
         return id;
@@ -172,12 +191,21 @@ public class OrdemServico implements Serializable {
         this.valor = valor;
     }
 
+<<<<<<< HEAD
     public String getCidade() {
         return cidade;
     }
 
     public void setCidade(String cidade) {
         this.cidade = cidade;
+=======
+    public String getIdCidade() {
+        return idCidade;
+    }
+
+    public void setIdCidade(String idCidade) {
+        this.idCidade = idCidade;
+>>>>>>> parent of db85a7f... mapeamento_aloisio
     }
     
     
