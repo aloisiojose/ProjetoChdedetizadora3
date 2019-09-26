@@ -1,7 +1,7 @@
 
 package com.projetos.projetochdedetizadora.model;
 
-<<<<<<< HEAD
+
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,13 +23,6 @@ public class Usuario implements Serializable {
     
     @Column(name="senha", length = 8, nullable = false)
     private String senha;
-=======
-public class Usuario {
-    private Long id; //NÃO pode ser nulo
-    private String login; //NÃO pode ser nulo
-    private String senha; //NÃO pode ser nulo
-    private String confirmarSenha; //NÃO VAI SER ENVIADO PRO BANCO DE DADOS
->>>>>>> parent of db85a7f... mapeamento_aloisio
 
     public Long getId() {
         return id;
@@ -54,6 +47,6 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    
+  
     
 }
