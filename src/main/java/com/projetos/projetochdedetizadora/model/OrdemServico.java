@@ -1,23 +1,60 @@
 
 package com.projetos.projetochdedetizadora.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class OrdemServico {
+@Entity
+@Table(name="ordemServico")
+public class OrdemServico implements Serializable {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = true)
     private Long id; //NÃO pode ser nulo
+   
+    
     private String idCliente;  //RELACIONAMENTO
-    private String idCidade; //RELACIONAMENTO
+  
     private String idFuncionario;  //RELACIONAMENTO
+    
+    @Column(name = "dataPedito_ordemServico", columnDefinition = "DATE")
     private LocalDate dataPedido; //NÃO pode ser nulo
+    
+    @Column(name = "dataServico_ordemServico", columnDefinition = "DATE")
     private LocalDate dataServico; //PODE ser nulo
+    
+    @Column(name = "local_ordemServico", length = 100, nullable = true)
     private String local; //NÃO pode ser nulo
+    
+    @Column(name = "complemento_ordemServico", length = 100, nullable = true)
     private String complemento; //PODE ser nulo
+    
+    @Column(name = "area_ordemServico", length = 100, nullable = true)
     private float area; //PODE ser nulo
+    
+    @Column(name = "situacaoVisita_ordemServico", length = 100, nullable = true)
     private String situacaoVisita; //NÃO pode ser nulo
+    
+    @Column(name = "praga_ordemServico", length = 100, nullable = true)
     private String praga; //PODE ser nulo
+    
+    
     private String idProduto;  //RELACIONAMENTO
+    
+    @Column(name = "modalidadeOrdemServico_ordemServico", length = 100, nullable = true)
     private String modalidadeOrdemServico; //NÃO pode ser nulo
+    
+    @Column(name = "tempoGarantia_ordemServico", length = 100, nullable = true)
     private int tempoGarantia; //PODE ser nulo
+    
+    @Column(name = "valorCusto_ordemServico", precision = 10, scale = 2, nullable = true)
     private double valor; //PODE ser nulo
 
     public Long getId() {
@@ -130,15 +167,5 @@ public class OrdemServico {
 
     public void setValor(double valor) {
         this.valor = valor;
-    }
-
-    public String getIdCidade() {
-        return idCidade;
-    }
-
-    public void setIdCidade(String idCidade) {
-        this.idCidade = idCidade;
-    }
-    
-    
+    }  
 }

@@ -1,16 +1,45 @@
 
 package com.projetos.projetochdedetizadora.model;
 
-public class Produto {
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="produto")
+public class Produto implements Serializable {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = true)
     private Long id; //NÃO pode ser nulo
+    
+    @Column(name = "descricao_produto", length = 100, nullable = true)
     private String descricao; //NÃO pode ser nulo
+    
+    @Column(name = "quantidade_produto", precision = 10, scale = 2, nullable = true)    
     private float quantidade; //NÃO pode ser nulo
+    
+    @Column(name = "unidade_produto", length = 100, nullable = true)
     private String unidade; //NÃO pode ser nulo
+    
+    @Column(name = "valorCusto_produto", precision = 10, scale = 2, nullable = true)
     private Double valorCusto; //NÃO pode ser nulo
+    
+   
     private String idFornecedor; //RELACIONAMENTO
+    
+    @Column(name = "observacao_produto", length = 100, nullable = true)
     private String observacao; //PODE ser nulo
+    
+    @Column(name = "status_produto", length = 100, nullable = true)
     private String status; //NÃO pode ser nulo
 
+    
     public Long getId() {
         return id;
     }
